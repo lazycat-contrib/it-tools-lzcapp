@@ -1,0 +1,18 @@
+package: community.lazycat.app.it-tools
+version: 2026.10.25
+name: IT-Tools
+description: Collection of online tools for developers - converters, formatters, encoders, testers and more
+min_os_version: "1.5.0"
+homepage: https://github.com/CorentinTh/it-tools
+author: CorentinTh
+license: GPL-3.0
+permissions:
+  required:
+    - net.internet
+locales:
+  zh:
+    name: IT-Tools
+    description: 开发者在线工具箱：编码转换、格式化、加密、正则测试、时间戳转换等上百个小工具
+  en:
+    name: IT-Tools
+    description: Collection of online tools for developers - converters, formatters, encoders, testers and more

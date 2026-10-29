@@ -1,0 +1,44 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: dist/application.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: it-tools
+
+build:
+  toolchains: []
+  run_buildscript: false
+
+images:
+  - id: it-tools
+    target: service
+    service: it-tools
+    source: docker.io/sharevb/it-tools
+    channel: date
+    sort: semver
+    tag_regex: '^[0-9]{4}\.[0-9]{1,2}\.[0-9]{1,2}$'
+    version_regex: '^(?P<version>[0-9]{4})\.(?P<month>[0-9]{1,2})\.(?P<day>[0-9]{1,2})$'
+    version_template: '{version}.{month}.{day}'
+    max_tags: 50000
+    max_matching_tags: 50000
+    delivery:
+      mode: mirror
+      require_digest_match: true
+
+stores:
+  official:
+    enabled: false
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: IT-Tools
+    summary: 开发者在线工具箱，上百个小工具开箱即用
