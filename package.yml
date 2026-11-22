@@ -1,5 +1,5 @@
 package: community.lazycat.app.it-tools
-version: 2026.10.25
+version: 2026.11.22
 name: IT-Tools
 description: Collection of online tools for developers - converters, formatters, encoders, testers and more
 min_os_version: "1.5.0"
